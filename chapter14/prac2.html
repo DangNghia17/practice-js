@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modify List</title>
+</head>
+<body>
+  <ul id="item-list"></ul>
+  <button id="add-item-btn">Add Item</button>
+  <button id="remove-item-btn">Remove Item</button>
+
+  <script>
+    const addItemBtn = document.getElementById("add-item-btn");
+    const removeItemBtn = document.getElementById("remove-item-btn");
+    const itemList = document.getElementById("item-list");
+
+    addItemBtn.addEventListener("click", () => {
+      const newItem = document.createElement("li");
+      newItem.textContent = "New Item";
+      itemList.appendChild(newItem);
+    });
+
+    removeItemBtn.addEventListener("click", () => {
+      const lastItem = itemList.lastElementChild;
+      if (lastItem) {
+        itemList.removeChild(lastItem);
+      }
+    });
+  </script>
+</body>
+</html>
